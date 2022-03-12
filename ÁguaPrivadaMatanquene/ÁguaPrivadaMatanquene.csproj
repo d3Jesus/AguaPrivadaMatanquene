@@ -1,0 +1,411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6C8F5E38-ED1A-43C0-89E7-3144B401C8B0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ÁguaPrivadaMatanquene</RootNamespace>
+    <AssemblyName>ÁguaPrivadaMatanquene</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=12.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cadastro\frmCasCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\frmCasCliente.Designer.cs">
+      <DependentUpon>frmCasCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\frmCasEscalao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\frmCasEscalao.Designer.cs">
+      <DependentUpon>frmCasEscalao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\frmCasFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\frmCasFuncionario.Designer.cs">
+      <DependentUpon>frmCasFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\frmCasInstalacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\frmCasInstalacao.Designer.cs">
+      <DependentUpon>frmCasInstalacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\frmCasPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\frmCasPagamento.Designer.cs">
+      <DependentUpon>frmCasPagamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastro\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastro\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="clienteDetails_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\frmConsCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\frmConsCliente.Designer.cs">
+      <DependentUpon>frmConsCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\frmConsEscalao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\frmConsEscalao.Designer.cs">
+      <DependentUpon>frmConsEscalao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\frmConsFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\frmConsFunc.Designer.cs">
+      <DependentUpon>frmConsFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\frmConsInstalacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\frmConsInstalacao.Designer.cs">
+      <DependentUpon>frmConsInstalacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consulta\frmConsUsu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consulta\frmConsUsu.Designer.cs">
+      <DependentUpon>frmConsUsu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DadosDaConexao.cs" />
+    <Compile Include="DALConexao.cs" />
+    <Compile Include="DAL\DALCliente.cs" />
+    <Compile Include="DAL\DALEscalao.cs" />
+    <Compile Include="DAL\DALFactura.cs" />
+    <Compile Include="DAL\DALFuncionario.cs" />
+    <Compile Include="DAL\DALInstalacao.cs" />
+    <Compile Include="DAL\DALLogin.cs" />
+    <Compile Include="DAL\DALPagamento.cs" />
+    <Compile Include="DAL\DALRecibo.cs" />
+    <Compile Include="DAL\DALUsuario.cs" />
+    <Compile Include="DEBITO_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="escalaoDetails_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="facturacao_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Factura_e_Recibo\frmFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura_e_Recibo\frmFactura.Designer.cs">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura_e_Recibo\frmFacturacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura_e_Recibo\frmFacturacao.Designer.cs">
+      <DependentUpon>frmFacturacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Factura_e_Recibo\frmRecibo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura_e_Recibo\frmRecibo.Designer.cs">
+      <DependentUpon>frmRecibo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="factura_Result.cs">
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmWelcome.Designer.cs">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatanqueneDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MatanqueneDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Modelos\ModeloCliente.cs" />
+    <Compile Include="Modelos\ModeloEscalao.cs" />
+    <Compile Include="Modelos\ModeloFactura.cs" />
+    <Compile Include="Modelos\ModeloFuncionario.cs" />
+    <Compile Include="Modelos\ModeloInstalacao.cs" />
+    <Compile Include="Modelos\ModeloLogin.cs" />
+    <Compile Include="Modelos\ModeloPagamento.cs" />
+    <Compile Include="Modelos\ModeloRecibo.cs" />
+    <Compile Include="Modelos\ModeloUsuario.cs" />
+    <Compile Include="Pesquisar\frmPesqCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqCliente.Designer.cs">
+      <DependentUpon>frmPesqCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqEscalao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqEscalao.Designer.cs">
+      <DependentUpon>frmPesqEscalao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqFuncionario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqFuncionario.Designer.cs">
+      <DependentUpon>frmPesqFuncionario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqInstalacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqInstalacao.Designer.cs">
+      <DependentUpon>frmPesqInstalacao.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisar\frmPesqUsuario.Designer.cs">
+      <DependentUpon>frmPesqUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorio\GUI\frmRptCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\GUI\frmRptCliente.Designer.cs">
+      <DependentUpon>frmRptCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Relatorio\GUI\frmRptEscalao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorio\GUI\frmRptEscalao.Designer.cs">
+      <DependentUpon>frmRptEscalao.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Cadastro\frmCasCliente.resx">
+      <DependentUpon>frmCasCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\frmCasEscalao.resx">
+      <DependentUpon>frmCasEscalao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\frmCasFuncionario.resx">
+      <DependentUpon>frmCasFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\frmCasInstalacao.resx">
+      <DependentUpon>frmCasInstalacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\frmCasPagamento.resx">
+      <DependentUpon>frmCasPagamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastro\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\frmConsCliente.resx">
+      <DependentUpon>frmConsCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\frmConsEscalao.resx">
+      <DependentUpon>frmConsEscalao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\frmConsFunc.resx">
+      <DependentUpon>frmConsFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\frmConsInstalacao.resx">
+      <DependentUpon>frmConsInstalacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consulta\frmConsUsu.resx">
+      <DependentUpon>frmConsUsu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura_e_Recibo\frmFactura.resx">
+      <DependentUpon>frmFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura_e_Recibo\frmFacturacao.resx">
+      <DependentUpon>frmFacturacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura_e_Recibo\frmRecibo.resx">
+      <DependentUpon>frmRecibo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura_e_Recibo\rptFacturacao.rdlc" />
+    <EmbeddedResource Include="Factura_e_Recibo\rptRecibo.rdlc" />
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmWelcome.resx">
+      <DependentUpon>frmWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\frmPesqCliente.resx">
+      <DependentUpon>frmPesqCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\frmPesqEscalao.resx">
+      <DependentUpon>frmPesqEscalao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\frmPesqFuncionario.resx">
+      <DependentUpon>frmPesqFuncionario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\frmPesqInstalacao.resx">
+      <DependentUpon>frmPesqInstalacao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisar\frmPesqUsuario.resx">
+      <DependentUpon>frmPesqUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Relatorio\GUI\frmRptCliente.resx">
+      <DependentUpon>frmRptCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\GUI\frmRptEscalao.resx">
+      <DependentUpon>frmRptEscalao.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorio\Report\rptCliente.rdlc" />
+    <EmbeddedResource Include="Relatorio\Report\rptEscalao.rdlc" />
+    <None Include="MatanqueneDataSet.xsc">
+      <DependentUpon>MatanqueneDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="MatanqueneDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>MatanqueneDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="MatanqueneDataSet.xss">
+      <DependentUpon>MatanqueneDataSet.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="Model.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model.edmx.diagram">
+      <DependentUpon>Model.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagens\Coins.png" />
+    <Content Include="Imagens\Coins_52px.png" />
+    <Content Include="Imagens\Maximize Window_20px.png" />
+    <Content Include="Imagens\Plus_20px.png" />
+    <Content Include="Imagens\Search_20px.png" />
+    <Content Include="Imagens\torneira.jpg" />
+    <Content Include="Model.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model.edmx</DependentUpon>
+      <LastGenOutput>Model.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

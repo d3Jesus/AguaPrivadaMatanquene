@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MatanqueneModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="clienteDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="DEBITO" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CLIENTE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="divida" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CLIENTE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="escalaoDetails" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="factura" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="facturacao" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CLIENTE" Type="int" Mode="In" />
+        </Function>
+        <Function Name="multa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="CLIENTE" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="MatanqueneModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MatanqueneModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="MatanqueneEntities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="clienteDetails" ReturnType="Collection(MatanqueneModel.clienteDetails_Result)" />
+          <FunctionImport Name="divida" ReturnType="Collection(Decimal)">
+          <Parameter Name="CLIENTE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="escalaoDetails" ReturnType="Collection(MatanqueneModel.escalaoDetails_Result)" />
+          <FunctionImport Name="factura" ReturnType="Collection(MatanqueneModel.factura_Result)" />
+          <FunctionImport Name="facturacao" ReturnType="Collection(MatanqueneModel.facturacao_Result)">
+          <Parameter Name="CLIENTE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="multa" ReturnType="Collection(Decimal)">
+          <Parameter Name="CLIENTE" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DEBITO" ReturnType="Collection(MatanqueneModel.DEBITO_Result)" >
+          <Parameter Name="CLIENTE" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="clienteDetails_Result">
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="45" />
+          <Property Type="String" Name="sexo" Nullable="false" MaxLength="45" />
+          <Property Type="String" Name="provincia" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="bairro" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="contacto" Nullable="false" MaxLength="45" />
+          <Property Type="DateTime" Name="data" Nullable="false" />
+          <Property Type="String" Name="estado" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="escalaoDetails_Result">
+          <Property Type="Int32" Name="idEscalao" Nullable="false" />
+          <Property Type="String" Name="especie" Nullable="false" MaxLength="45" />
+          <Property Type="Int32" Name="quantidade" Nullable="false" />
+          <Property Type="Decimal" Name="valorUn" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Int32" Name="tot" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="factura_Result">
+          <Property Type="Int32" Name="idFactura" Nullable="false" />
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="45" />
+          <Property Type="String" Name="provincia" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="bairro" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="data" Nullable="false" />
+          <Property Type="Decimal" Name="valorTotal" Nullable="false" Precision="18" Scale="2" />
+        </ComplexType>
+        <ComplexType Name="facturacao_Result">
+          <Property Type="Int32" Name="idFactura" Nullable="false" />
+          <Property Type="Int32" Name="idCliente" Nullable="false" />
+          <Property Type="DateTime" Name="data" Nullable="false" />
+          <Property Type="String" Name="nome" Nullable="false" MaxLength="45" />
+          <Property Type="String" Name="quarteirao" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="bairro" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="contador" Nullable="false" />
+          <Property Type="String" Name="localAbastecimento" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="especie" Nullable="false" MaxLength="45" />
+          <Property Type="Int32" Name="quantidade" Nullable="false" />
+          <Property Type="Decimal" Name="valorUn" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="IVA" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="valorTotal" Nullable="false" Precision="18" Scale="2" />
+          <Property Type="String" Name="estado" Nullable="false" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="DEBITO_Result">
+          <Property Type="Decimal" Name="multa" Nullable="true" Precision="18" Scale="2" />
+          <Property Type="Decimal" Name="debito" Nullable="true" Precision="18" Scale="2" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MatanqueneModelStoreContainer" CdmEntityContainer="MatanqueneEntities" >
+          <FunctionImportMapping FunctionImportName="clienteDetails" FunctionName="MatanqueneModel.Store.clienteDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatanqueneModel.clienteDetails_Result">
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="contacto" ColumnName="contacto" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="divida" FunctionName="MatanqueneModel.Store.divida" />
+          <FunctionImportMapping FunctionImportName="escalaoDetails" FunctionName="MatanqueneModel.Store.escalaoDetails">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatanqueneModel.escalaoDetails_Result">
+                <ScalarProperty Name="idEscalao" ColumnName="idEscalao" />
+                <ScalarProperty Name="especie" ColumnName="especie" />
+                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+                <ScalarProperty Name="valorUn" ColumnName="valorUn" />
+                <ScalarProperty Name="tot" ColumnName="tot" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="factura" FunctionName="MatanqueneModel.Store.factura">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatanqueneModel.factura_Result">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="provincia" ColumnName="provincia" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="valorTotal" ColumnName="valorTotal" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="facturacao" FunctionName="MatanqueneModel.Store.facturacao">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatanqueneModel.facturacao_Result">
+                <ScalarProperty Name="idFactura" ColumnName="idFactura" />
+                <ScalarProperty Name="idCliente" ColumnName="idCliente" />
+                <ScalarProperty Name="data" ColumnName="data" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="quarteirao" ColumnName="quarteirao" />
+                <ScalarProperty Name="bairro" ColumnName="bairro" />
+                <ScalarProperty Name="contador" ColumnName="contador" />
+                <ScalarProperty Name="localAbastecimento" ColumnName="localAbastecimento" />
+                <ScalarProperty Name="especie" ColumnName="especie" />
+                <ScalarProperty Name="quantidade" ColumnName="quantidade" />
+                <ScalarProperty Name="valorUn" ColumnName="valorUn" />
+                <ScalarProperty Name="IVA" ColumnName="IVA" />
+                <ScalarProperty Name="valorTotal" ColumnName="valorTotal" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="multa" FunctionName="MatanqueneModel.Store.multa" />
+          <FunctionImportMapping FunctionImportName="DEBITO" FunctionName="MatanqueneModel.Store.DEBITO">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="MatanqueneModel.DEBITO_Result">
+                <ScalarProperty Name="multa" ColumnName="multa" />
+                <ScalarProperty Name="debito" ColumnName="debito" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
